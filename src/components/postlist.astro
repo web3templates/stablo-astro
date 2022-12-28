@@ -1,0 +1,95 @@
+---
+import cx from "classnames";
+
+import { Icon } from "astro-icon";
+import { Image, Picture } from "@astrojs/image/components";
+import { getFormattedDate } from "@utils/all";
+import Label from "@components/ui/label.astro";
+import { authors } from "@data/authors";
+import { categories } from "@data/category";
+
+const { post, aspect, preloadImage } = Astro.props;
+const author = authors.find((item) => item.slug === post.frontmatter.author);
+const category = categories.find(
+  (item) => item.slug === post.frontmatter.category
+);
+---
+
+<div class="cursor-pointer group">
+  <div
+    class={cx(
+      "relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800   hover:scale-105",
+      aspect === "landscape" ? "aspect-video" : "aspect-square"
+    )}>
+    <a href={post.url}>
+      {
+        post.frontmatter.image ? (
+          <Picture
+            src={post.frontmatter.image}
+            widths={[200, 400, 800]}
+            sizes="(max-width: 640px) 90vw, 480px"
+            aspectRatio={aspect === "landscape" ? "16:9" : "1:1"}
+            alt="Thumbnail"
+            loading={preloadImage ? "eager" : "lazy"}
+            class="w-full rounded-md"
+          />
+        ) : (
+          <span class="absolute w-16 h-16 text-gray-200 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+            <Icon
+              class="text-black w-4 h-4"
+              name="heroicons-outline:photograph"
+            />
+          </span>
+        )
+      }
+    </a>
+  </div>
+
+  <a href="#">
+    <Label theme={category.color}>{category.title}</Label>
+  </a>
+  <h2
+    class="mt-2 text-lg font-semibold tracking-normal text-brand-primary dark:text-white">
+    <a href={post.url}>
+      <span
+        class="bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
+        {post.frontmatter.title}
+      </span>
+    </a>
+  </h2>
+
+  <div class="hidden">
+    {
+      post.frontmatter.excerpt && (
+        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+          <a href={post.url}>{post.frontmatter.excerpt}</a>
+        </p>
+      )
+    }
+  </div>
+
+  <div
+    class="flex items-center mt-3 space-x-3 text-gray-500 dark:text-gray-400">
+    <div class="flex items-center gap-3">
+      <div class="relative flex-shrink-0 w-5 h-5">
+        {
+          author.image && (
+            <Image
+              src={author.image}
+              alt="Author Photo"
+              width={20}
+              height={20}
+              loading="lazy"
+              className="rounded-full"
+            />
+          )
+        }
+      </div>
+      <span class="text-sm">{author.name}</span>
+    </div>
+    <span class="text-xs text-gray-300 dark:text-gray-600"> &bull;</span>
+    <time class="text-sm" datetime={post.frontmatter.publishDate}>
+      {getFormattedDate(post.frontmatter.publishDate)}
+    </time>
+  </div>
+</div>
