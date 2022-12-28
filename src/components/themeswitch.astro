@@ -17,8 +17,8 @@ import { Icon } from "astro-icon";
   }
 </style>
 
-<script>
-  const select = document.getElementById("themeSwitch") as HTMLSelectElement;
+<script is:inline>
+  const select = document.getElementById("themeSwitch");
   const theme = localStorage.getItem("theme");
   const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
@@ -39,8 +39,8 @@ import { Icon } from "astro-icon";
 
   updateTheme(select.value);
 
-  select.addEventListener("change", (event: Event) => {
-    const select = event.target as HTMLSelectElement;
+  select.addEventListener("change", (event) => {
+    const select = event.target;
     updateTheme(select.value);
   });
 </script>

@@ -1,7 +1,7 @@
 interface Props {
   title: string;
   slug: string;
-  color: string;
+  color: "green" | "blue" | "orange" | "purple" | "pink";
   description: string;
 }
 

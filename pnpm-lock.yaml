@@ -17,6 +17,8 @@ specifiers:
   astro-icon: ^0.8.0
   astro-seo: ^0.6.0
   classnames: ^2.3.2
+  mdast-util-to-string: ^3.1.0
+  reading-time: ^1.5.0
   sharp: ^0.31.3
   tailwindcss: ^3.0.24
 
@@ -34,6 +36,8 @@ dependencies:
   astro-feather-icons: 1.0.2
   astro-icon: 0.8.0
   astro-seo: 0.6.0
+  mdast-util-to-string: 3.1.0
+  reading-time: 1.5.0
   tailwindcss: 3.2.1
 
 devDependencies:
@@ -3609,6 +3613,10 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
+
+  /reading-time/1.5.0:
+    resolution: {integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==}
+    dev: false
 
   /recast/0.20.5:
     resolution: {integrity: sha512-E5qICoPoNL4yU0H0NoBDntNB0Q5oMSNh9usFctYniLBluTthi3RsQVBXIJNbApOlvSwW/RGxIuokPcAc59J5fQ==}
