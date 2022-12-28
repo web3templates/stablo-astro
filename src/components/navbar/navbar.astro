@@ -5,7 +5,14 @@ import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import logoImage from "@assets/logo.svg";
 import darkLogo from "@assets/logo-dark.svg";
-const leftmenu = [
+
+interface Menu {
+  label: string;
+  href: string;
+  external?: boolean;
+  badge?: string;
+}
+const leftmenu: Menu[] = [
   {
     label: "Home",
     href: "/",
@@ -20,7 +27,7 @@ const leftmenu = [
   },
 ];
 
-const rightmenu = [
+const rightmenu: Menu[] = [
   {
     label: "Archive",
     href: "/archive",
@@ -38,13 +45,11 @@ const rightmenu = [
   },
 ];
 
-const mobilemenu = [...leftmenu, ...rightmenu];
+const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
 ---
 
 <Container>
-  <nav
-    x-data="{ open: false }"
-    x-init="$watch('open', value => console.log(value))">
+  <nav>
     <div class="flex flex-wrap justify-between md:gap-10 md:flex-nowrap">
       <div
         class="flex-col items-center justify-start order-1 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:order-none md:flex-1">
@@ -69,7 +74,7 @@ const mobilemenu = [...leftmenu, ...rightmenu];
         </a>
 
         <button
-          @click="open = !open"
+          id="menu"
           aria-label="Toggle Menu"
           class="px-2 py-1 ml-auto text-gray-500 rounded-md md:hidden focus:text-blue-500 focus:outline-none dark:text-gray-300">
           <svg
@@ -79,14 +84,14 @@ const mobilemenu = [...leftmenu, ...rightmenu];
             xmlns="http://www.w3.org/2000/svg">
             <title>Menu</title>
             <path
-              x-cloak
-              x-show="open"
+              id="close-icon"
+              class="hidden"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"
             ></path>
             <path
-              x-show="!open"
+              id="line-icon"
               fill-rule="evenodd"
               d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"
             ></path>
@@ -105,5 +110,35 @@ const mobilemenu = [...leftmenu, ...rightmenu];
         }
       </div>
     </div>
+    <div
+      id="mobilemenu"
+      class="hidden flex-col items-center justify-start order-2 w-full md:hidden">
+      {
+        mobilemenu.map((item, index) => (
+          <a
+            href={item.href}
+            class="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
+            target={item.external ? "_blank" : ""}
+            rel={item.external ? "noopener" : ""}>
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
   </nav>
 </Container>
+
+<script>
+  // JavaScript to toggle the visibility of the menu
+  const menuButton = document.getElementById("menu");
+  const mobilemenu = document.getElementById("mobilemenu");
+  const lineicon = document.getElementById("line-icon");
+  const closeicon = document.getElementById("close-icon");
+
+  menuButton.addEventListener("click", () => {
+    mobilemenu.classList.toggle("hidden");
+    lineicon.classList.toggle("hidden");
+    closeicon.classList.toggle("hidden");
+    mobilemenu.classList.toggle("flex");
+  });
+</script>
