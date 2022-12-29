@@ -6,6 +6,7 @@ import Layout from "./Layout.astro";
 import { authors } from "@data/authors";
 import { categories } from "@data/category";
 import { Image, Picture } from "@astrojs/image/components";
+import Authorcard from "@components/authorcard.astro";
 
 const { frontmatter } = Astro.props;
 
@@ -53,7 +54,7 @@ const category = categories.find((item) => item.slug === frontmatter.category);
                 {getFormattedDate(frontmatter.publishDate)}
               </time>
               <span>
-                · {frontmatter.estReadingTime || "5"} min read
+                · {Math.round(frontmatter.estReadingTime) || "5"} min read
               </span>
             </div>
           </div>
@@ -85,10 +86,10 @@ const category = categories.find((item) => item.slug === frontmatter.category);
         class="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-500">
         <slot />
 
-        <div class="w-full md:w-auto flex flex-wrap gap-3">
+        <div class="w-full md:w-auto flex items-center flex-wrap gap-3">
           {
             frontmatter.tags.map((tag) => (
-              <span class="text-sm text-gray-500">#{tag}</span>
+              <span class="text-sm text-slate-500">#{tag}</span>
             ))
           }
         </div>
@@ -101,7 +102,7 @@ const category = categories.find((item) => item.slug === frontmatter.category);
           ← View all posts
         </a>
       </div>
-      <!-- {post.author && <AuthorCard author={post.author} />} -->
+      {author && <Authorcard author={author} />}
     </article>
   </Container>
 </Layout>
