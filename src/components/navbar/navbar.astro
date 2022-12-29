@@ -1,8 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
 import Container from "@components/container.astro";
-import Link from "@components/ui/link.astro";
-import Dropdown from "./dropdown.astro";
 import logoImage from "@assets/logo.svg";
 import darkLogo from "@assets/logo-dark.svg";
 
@@ -66,11 +63,11 @@ const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
 
       <div class="flex items-center justify-between w-full md:w-auto">
         <a class="w-28 dark:hidden" href="/">
-          <Image src={logoImage} alt="Logo" width={132} height={52} />
+          <img src={logoImage} alt="Logo" width={132} height={52} />
         </a>
 
         <a class="hidden w-28 dark:block" href="/">
-          <Image src={darkLogo} alt="Logo" width={132} height={52} />
+          <img src={darkLogo} alt="Logo" width={132} height={52} />
         </a>
 
         <button
