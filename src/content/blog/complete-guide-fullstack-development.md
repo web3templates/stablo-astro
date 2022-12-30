@@ -5,7 +5,7 @@ publishDate: "2022-11-08T11:39:36.050Z"
 image: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613"
 category: "design"
 author: "mario-sanchez"
-layout: "@layouts/BlogLayout.astro"
+#layout: "@layouts/BlogLayout.astro"
 tags: [webdev, tailwindcss, frontend]
 ---
 

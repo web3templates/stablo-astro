@@ -22,11 +22,11 @@ export function remarkReadingTime() {
 }
 
 /** Check if an Image Path is Relative or Absolute */
-export const checkImageUrl = (image) => {
+export const checkImageUrl = (image, url) => {
   try {
     new URL(image);
     return image;
   } catch (error) {
-    return new URL(image, Astro.site).toString();
+    return new URL(image, url).toString();
   }
 };

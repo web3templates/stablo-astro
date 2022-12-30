@@ -9,10 +9,8 @@ import { authors } from "@data/authors";
 import { categories } from "@data/category";
 
 const { post, aspect, preloadImage } = Astro.props;
-const author = authors.find((item) => item.slug === post.frontmatter.author);
-const category = categories.find(
-  (item) => item.slug === post.frontmatter.category
-);
+const author = authors.find((item) => item.slug === post.data.author);
+const category = categories.find((item) => item.slug === post.data.category);
 ---
 
 <div class="cursor-pointer group">
@@ -21,11 +19,11 @@ const category = categories.find(
       "relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800   hover:scale-105",
       aspect === "landscape" ? "aspect-video" : "aspect-square"
     )}>
-    <a href={post.url}>
+    <a href={"/blog/" + post.slug}>
       {
-        post.frontmatter.image ? (
+        post.data.image ? (
           <Picture
-            src={post.frontmatter.image}
+            src={post.data.image}
             widths={[200, 400, 800]}
             sizes="(max-width: 640px) 90vw, 480px"
             aspectRatio={aspect === "landscape" ? "16:9" : "1:1"}
@@ -50,19 +48,19 @@ const category = categories.find(
   </a>
   <h2
     class="mt-2 text-lg font-semibold tracking-normal text-brand-primary dark:text-white">
-    <a href={post.url}>
+    <a href={"/blog/" + post.slug}>
       <span
         class="bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
-        {post.frontmatter.title}
+        {post.data.title}
       </span>
     </a>
   </h2>
 
   <div class="hidden">
     {
-      post.frontmatter.excerpt && (
+      post.data.excerpt && (
         <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
-          <a href={post.url}>{post.frontmatter.excerpt}</a>
+          <a href={"/blog/" + post.slug}>{post.data.excerpt}</a>
         </p>
       )
     }
@@ -88,8 +86,8 @@ const category = categories.find(
       <span class="text-sm">{author.name}</span>
     </div>
     <span class="text-xs text-gray-300 dark:text-gray-600"> &bull;</span>
-    <time class="text-sm" datetime={post.frontmatter.publishDate}>
-      {getFormattedDate(post.frontmatter.publishDate)}
+    <time class="text-sm" datetime={post.data.publishDate}>
+      {getFormattedDate(post.data.publishDate)}
     </time>
   </div>
 </div>

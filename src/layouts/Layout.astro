@@ -1,12 +1,12 @@
 ---
 import Footer from "@components/footer.astro";
-import Navbar from "@components/navbar/navbar.astro";
+// import Navbar from "@components/navbar.astro";
 import "@fontsource/inter/variable.css";
 import { checkImageUrl } from "@utils/all";
 import { SEO } from "astro-seo";
 
 export interface Props {
-  title: string;
+  title?: string;
   desc?: string;
   ogimage?: string;
 }
@@ -15,7 +15,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const { title, desc, ogimage = "/opengraph.jpg" } = Astro.props;
 
-const resolvedOGImage = checkImageUrl(ogimage);
+const resolvedOGImage = checkImageUrl(ogimage, Astro.site);
 
 const makeTitle = title
   ? title + " | " + "Stablo"
@@ -53,7 +53,7 @@ const makeTitle = title
     />
   </head>
   <body>
-    <Navbar />
+    <!-- <Navbar /> -->
     <slot />
     <Footer />
     <style is:global>
@@ -61,10 +61,6 @@ const makeTitle = title
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
       img {
         content-visibility: auto;
-      }
-      /* Avoid Alpine.js Hidden Element Flash */
-      [x-cloak] {
-        display: none;
       }
     </style>
   </body>

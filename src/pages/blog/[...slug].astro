@@ -2,22 +2,38 @@
 import Container from "@components/container.astro";
 import Label from "@components/ui/label.astro";
 import { getFormattedDate } from "@utils/all";
-import Layout from "./Layout.astro";
+import Layout from "@layouts/Layout.astro";
 import { authors } from "@data/authors";
 import { categories } from "@data/category";
 import { Image, Picture } from "@astrojs/image/components";
 import Authorcard from "@components/authorcard.astro";
+import { getCollection, CollectionEntry } from "astro:content";
 
-const { frontmatter } = Astro.props;
+type Props = CollectionEntry<"blog">;
 
-const author = authors.find((item) => item.slug === frontmatter.author);
-const category = categories.find((item) => item.slug === frontmatter.category);
+export async function getStaticPaths() {
+  const blog = await getCollection("blog");
+  return blog.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+
+const { Content } = await post.render();
+
+// const author = authors.find((item) => item.slug === entry.data.author);
+// const category = categories.find((item) => item.slug === entry.data.category);
 ---
 
+<div>hey</div>
+<Content />
+<!--
 <Layout
-  title={frontmatter.title}
-  desc={frontmatter.excerpt}
-  ogimage={frontmatter.image}>
+  title={entry.data.title}
+  desc={entry.data.excerpt}
+  ogimage={entry.data.image}>
   <Container>
     <div class="max-w-screen-md mx-auto">
       <div class="text-center">
@@ -26,7 +42,7 @@ const category = categories.find((item) => item.slug === frontmatter.category);
 
       <h1
         class="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
-        {frontmatter.title}
+        {entry.data.title}
       </h1>
 
       <div class="flex justify-center mt-3 space-x-3 text-gray-500">
@@ -53,11 +69,11 @@ const category = categories.find((item) => item.slug === frontmatter.category);
             <div class="flex items-center space-x-2 text-sm">
               <time
                 class="text-gray-500 dark:text-gray-400"
-                datetime={frontmatter.publishDate}>
-                {getFormattedDate(frontmatter.publishDate)}
+                datetime={entry.data.publishDate}>
+                {getFormattedDate(entry.data.publishDate)}
               </time>
               <span>
-                · {Math.round(frontmatter.estReadingTime) || "5"} min read
+                · {Math.round(entry.data.estReadingTime) || "5"} min read
               </span>
             </div>
           </div>
@@ -69,9 +85,9 @@ const category = categories.find((item) => item.slug === frontmatter.category);
   <div
     class="relative z-0 max-w-screen-lg mx-auto overflow-hidden lg:rounded-lg aspect-video">
     {
-      frontmatter.image && (
+      entry.data.image && (
         <Picture
-          src={frontmatter.image}
+          src={entry.data.image}
           widths={[200, 400, 800]}
           sizes="(max-width: 640px) 90vw, 480px"
           aspectRatio="16:9"
@@ -87,11 +103,11 @@ const category = categories.find((item) => item.slug === frontmatter.category);
     <article class="max-w-screen-md mx-auto">
       <div
         class="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-500">
-        <slot />
+        <Content />
 
         <div class="w-full md:w-auto flex items-center flex-wrap gap-3">
           {
-            frontmatter.tags.map((tag) => (
+            entry.data.tags.map((tag) => (
               <span class="text-sm text-gray-500">#{tag}</span>
             ))
           }
@@ -108,4 +124,4 @@ const category = categories.find((item) => item.slug === frontmatter.category);
       {author && <Authorcard author={author} />}
     </article>
   </Container>
-</Layout>
+</Layout> -->

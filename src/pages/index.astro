@@ -4,12 +4,23 @@ import Postlist from "@components/postlist.astro";
 import Layout from "@layouts/Layout.astro";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
-  (a, b) =>
-    new Date(b.frontmatter.publishDate).valueOf() -
-    new Date(a.frontmatter.publishDate).valueOf()
-);
-console.log(posts[0].frontmatter.image);
+// const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+//   (a, b) =>
+//     new Date(b.frontmatter.publishDate).valueOf() -
+//     new Date(a.frontmatter.publishDate).valueOf()
+// );
+// console.log(posts[0].frontmatter.image);
+
+import { getCollection } from "astro:content";
+
+// Only return posts with `draft: true` in the frontmatter
+const BlogPosts = (
+  await getCollection("blog", ({ data }) => {
+    return data.draft !== true;
+  })
+).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+console.log(BlogPosts[0].slug);
 ---
 
 <Layout title="">
@@ -17,15 +28,17 @@ console.log(posts[0].frontmatter.image);
     <main>
       <div class="grid gap-10 lg:gap-10 md:grid-cols-2">
         {
-          posts
-            .slice(0, 2)
-            .map((post) => (
-              <Postlist post={post} aspect="landscape" preloadImage={true} />
-            ))
+          BlogPosts.slice(0, 2).map((post) => (
+            <Postlist post={post} aspect="landscape" preloadImage={true} />
+          ))
         }
       </div>
       <div class="grid gap-10 mt-10 lg:gap-10 md:grid-cols-2 xl:grid-cols-3">
-        {posts.slice(2).map((post) => <Postlist post={post} aspect="square" />)}
+        {
+          BlogPosts.slice(2).map((post) => (
+            <Postlist post={post} aspect="square" />
+          ))
+        }
       </div>
     </main>
   </Container>
