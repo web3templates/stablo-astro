@@ -14,7 +14,10 @@ const author = authors.find((item) => item.slug === frontmatter.author);
 const category = categories.find((item) => item.slug === frontmatter.category);
 ---
 
-<Layout title={frontmatter.title}>
+<Layout
+  title={frontmatter.title}
+  desc={frontmatter.excerpt}
+  ogimage={frontmatter.image}>
   <Container>
     <div class="max-w-screen-md mx-auto">
       <div class="text-center">
@@ -74,7 +77,7 @@ const category = categories.find((item) => item.slug === frontmatter.category);
           aspectRatio="16:9"
           alt="Thumbnail"
           loading="eager"
-          class="w-full rounded-md"
+          class="w-full"
         />
       )
     }
@@ -89,7 +92,7 @@ const category = categories.find((item) => item.slug === frontmatter.category);
         <div class="w-full md:w-auto flex items-center flex-wrap gap-3">
           {
             frontmatter.tags.map((tag) => (
-              <span class="text-sm text-slate-500">#{tag}</span>
+              <span class="text-sm text-gray-500">#{tag}</span>
             ))
           }
         </div>

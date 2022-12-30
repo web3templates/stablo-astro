@@ -75,22 +75,20 @@ const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
           aria-label="Toggle Menu"
           class="px-2 py-1 ml-auto text-gray-500 rounded-md md:hidden focus:text-blue-500 focus:outline-none dark:text-gray-300">
           <svg
-            fill="currentColor"
-            class="w-4 h-4"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <title>Menu</title>
+            class="w-6 h-6 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24">
             <path
-              id="close-icon"
-              class="hidden"
+              class="navmenu-toggle"
+              fill-rule="evenodd"
+              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+            ></path>
+
+            <path
+              class="navmenu-toggle hidden"
               fill-rule="evenodd"
               clip-rule="evenodd"
-              d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"
-            ></path>
-            <path
-              id="line-icon"
-              fill-rule="evenodd"
-              d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"
+              d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
             ></path>
           </svg>
         </button>
@@ -107,35 +105,30 @@ const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
         }
       </div>
     </div>
-    <div
-      id="mobilemenu"
-      class="hidden flex-col items-center justify-start order-2 w-full md:hidden">
-      {
-        mobilemenu.map((item, index) => (
-          <a
-            href={item.href}
-            class="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
-            target={item.external ? "_blank" : ""}
-            rel={item.external ? "noopener" : ""}>
-            {item.label}
-          </a>
-        ))
-      }
+    <div class="navmenu-toggle hidden">
+      <div
+        class="flex flex-col items-center justify-start order-2 w-full md:hidden">
+        {
+          mobilemenu.map((item, index) => (
+            <a
+              href={item.href}
+              class="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
+              target={item.external ? "_blank" : ""}
+              rel={item.external ? "noopener" : ""}>
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
     </div>
   </nav>
 </Container>
 
 <script>
-  // JavaScript to toggle the visibility of the menu
   const menuButton = document.getElementById("menu");
-  const mobilemenu = document.getElementById("mobilemenu");
-  const lineicon = document.getElementById("line-icon");
-  const closeicon = document.getElementById("close-icon");
-
   menuButton.addEventListener("click", () => {
-    mobilemenu.classList.toggle("hidden");
-    lineicon.classList.toggle("hidden");
-    closeicon.classList.toggle("hidden");
-    mobilemenu.classList.toggle("flex");
+    [...document.querySelectorAll(".navmenu-toggle")].forEach((Element) => {
+      Element.classList.toggle("hidden");
+    });
   });
 </script>

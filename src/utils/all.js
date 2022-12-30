@@ -20,3 +20,13 @@ export function remarkReadingTime() {
     data.astro.frontmatter.estReadingTime = readingTime.minutes;
   };
 }
+
+/** Check if an Image Path is Relative or Absolute */
+export const checkImageUrl = (image) => {
+  try {
+    new URL(image);
+    return image;
+  } catch (error) {
+    return new URL(image, Astro.site).toString();
+  }
+};

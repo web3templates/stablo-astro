@@ -1,29 +1,21 @@
 ---
-import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource/inter/variable.css";
+import { checkImageUrl } from "@utils/all";
+import { SEO } from "astro-seo";
 
 export interface Props {
   title: string;
+  desc?: string;
+  ogimage?: string;
 }
-
-// const { src } = await getImage({
-//   src: "../../assets/hero.png",
-//   width: 800,
-//   height: 742,
-//   format: "avif",
-// });
-// console.log(src);
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
-  Astro.site
-).toString();
+const { title, desc, ogimage = "/opengraph.jpg" } = Astro.props;
 
-const { title } = Astro.props;
+const resolvedOGImage = checkImageUrl(ogimage);
 
 const makeTitle = title
   ? title + " | " + "Stablo"
@@ -37,11 +29,10 @@ const makeTitle = title
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description={desc ||
+        "Stablo is a Blog Starter Template built with Astro & MDX."}
       canonical={canonicalURL}
       twitter={{
         creator: "@surjithctly",
@@ -52,11 +43,11 @@ const makeTitle = title
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
-          image: resolvedImageWithDomain,
+          title: `Stablo - Blog Starter Template for Astro`,
+          image: resolvedOGImage,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "Stablo Screenshot",
         },
       }}
     />

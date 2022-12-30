@@ -2,22 +2,21 @@
 import { Icon } from "astro-icon";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
-import Button from "@components/ui/button.astro";
 import Contactform from "@components/contactform.astro";
+import Pagetitle from "@components/pagetitle.astro";
 ---
 
 <Layout title="Contact">
   <Container>
-    <Sectionhead>
+    <Pagetitle>
       <Fragment slot="title">Contact</Fragment>
       <Fragment slot="desc">We are a here to help.</Fragment>
-    </Sectionhead>
+    </Pagetitle>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contact Astroship</h2>
-        <p class="text-lg leading-relaxed text-slate-500 mt-3">
+        <h2 class="font-medium text-2xl text-gray-800">Contact Stablo</h2>
+        <p class="text-lg leading-relaxed text-gray-500 mt-3">
           Have something to say? We are here to help. Fill up the form or send
           email or call phone.
         </p>
@@ -27,8 +26,7 @@ import Contactform from "@components/contactform.astro";
             <span>1734 Sanfransico, CA 93063</span>
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@astroshipstarter.com"
-              >hello@astroshipstarter.com</a
+              href="mailto:hello@stablotemplate.com">hello@stablotemplate.com</a
             >
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a

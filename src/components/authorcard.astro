@@ -6,7 +6,7 @@ const { author } = Astro.props;
 
 <div
   class="px-8 py-8 mt-3 text-gray-500 rounded-2xl bg-gray-50 dark:bg-gray-900 dark:text-gray-400">
-  <div class="flex flex-wrap items-start sm:space-x-6 sm:flex-nowrap">
+  <div class="flex flex-wrap items-start sm:flex-nowrap gap-3 sm:gap-6">
     <div class="relative flex-shrink-0 w-24 h-24 mt-1">
       {
         author.image && (
@@ -22,12 +22,12 @@ const { author } = Astro.props;
       }
     </div>
     <div>
-      <div class="mb-3">
+      <div>
         <h4 class="text-lg font-medium text-gray-800 dark:text-gray-300">
           About {author.name}
         </h4>
       </div>
-      <div>
+      <div class="mt-3">
         {author.bio && <p>{author.bio}</p>}
       </div>
     </div>

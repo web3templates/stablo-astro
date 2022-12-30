@@ -1,7 +1,6 @@
 // https://astro.build/config
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import alpinejs from "@astrojs/alpinejs";
 import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
@@ -17,7 +16,6 @@ export default defineConfig({
   },
   integrations: [
     tailwind(),
-    alpinejs(),
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
