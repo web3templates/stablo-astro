@@ -4,7 +4,6 @@ import tailwind from "@astrojs/tailwind";
 import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import prefetch from "@astrojs/prefetch";
 
 import { remarkReadingTime } from "./src/utils/all";
 
@@ -25,6 +24,5 @@ export default defineConfig({
     }),
     mdx(),
     sitemap(),
-    prefetch(),
   ],
 });
