@@ -1,13 +1,16 @@
 ---
-import Container from "@components/container.astro";
-import Label from "@components/ui/label.astro";
-import { getFormattedDate } from "@utils/all";
-import Layout from "@layouts/Layout.astro";
-import { authors } from "@data/authors";
-import { categories } from "@data/category";
 import { Image, Picture } from "@astrojs/image/components";
 import Authorcard from "@components/authorcard.astro";
-import { getCollection, CollectionEntry } from "astro:content";
+import Container from "@components/container.astro";
+import Label from "@components/ui/label.astro";
+import { authors } from "@data/authors";
+import { categories } from "@data/category";
+import Layout from "@layouts/Layout.astro";
+import { getFormattedDate } from "@utils/all";
+import { CollectionEntry, getCollection } from "astro:content";
+
+import type { Author } from "@data/authors";
+import type { Category } from "@data/category";
 
 type Props = CollectionEntry<"blog">;
 
@@ -23,17 +26,16 @@ const { post } = Astro.props;
 
 const { Content } = await post.render();
 
-// const author = authors.find((item) => item.slug === entry.data.author);
-// const category = categories.find((item) => item.slug === entry.data.category);
+const author = authors.find((item) => item.slug === post.data.author) as Author;
+const category = categories.find(
+  (item) => item.slug === post.data.category
+) as Category;
 ---
 
-<div>hey</div>
-<Content />
-<!--
 <Layout
-  title={entry.data.title}
-  desc={entry.data.excerpt}
-  ogimage={entry.data.image}>
+  title={post.data.title}
+  desc={post.data.excerpt}
+  ogimage={post.data.image}>
   <Container>
     <div class="max-w-screen-md mx-auto">
       <div class="text-center">
@@ -42,7 +44,7 @@ const { Content } = await post.render();
 
       <h1
         class="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
-        {entry.data.title}
+        {post.data.title}
       </h1>
 
       <div class="flex justify-center mt-3 space-x-3 text-gray-500">
@@ -69,11 +71,11 @@ const { Content } = await post.render();
             <div class="flex items-center space-x-2 text-sm">
               <time
                 class="text-gray-500 dark:text-gray-400"
-                datetime={entry.data.publishDate}>
-                {getFormattedDate(entry.data.publishDate)}
+                datetime={post.data.publishDate}>
+                {getFormattedDate(post.data.publishDate)}
               </time>
               <span>
-                · {Math.round(entry.data.estReadingTime) || "5"} min read
+                · {Math.round(post.data.estReadingTime) || "5"} min read
               </span>
             </div>
           </div>
@@ -85,9 +87,9 @@ const { Content } = await post.render();
   <div
     class="relative z-0 max-w-screen-lg mx-auto overflow-hidden lg:rounded-lg aspect-video">
     {
-      entry.data.image && (
+      post.data.image && (
         <Picture
-          src={entry.data.image}
+          src={post.data.image}
           widths={[200, 400, 800]}
           sizes="(max-width: 640px) 90vw, 480px"
           aspectRatio="16:9"
@@ -105,9 +107,9 @@ const { Content } = await post.render();
         class="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-500">
         <Content />
 
-        <div class="w-full md:w-auto flex items-center flex-wrap gap-3">
+        <div class="flex flex-wrap items-center w-full gap-3 md:w-auto">
           {
-            entry.data.tags.map((tag) => (
+            post.data.tags.map((tag) => (
               <span class="text-sm text-gray-500">#{tag}</span>
             ))
           }
@@ -117,11 +119,11 @@ const { Content } = await post.render();
       <div class="flex justify-center mt-7 mb-7">
         <a
           href="/"
-          class="text-sm text-blue-600 dark:text-blue-500 bg-blue-50 px-5 py-3 rounded-md hover:bg-blue-100 transition">
+          class="px-5 py-3 text-sm text-blue-600 transition rounded-md dark:text-blue-500 bg-blue-50 hover:bg-blue-100">
           ← View all posts
         </a>
       </div>
       {author && <Authorcard author={author} />}
     </article>
   </Container>
-</Layout> -->
+</Layout>
