@@ -5,7 +5,6 @@ publishDate: "2022-11-07T15:39:36.050Z"
 image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9"
 category: "travel"
 author: "erika-oliver"
-#layout: "@layouts/BlogLayout.astro"
 tags: [astro, tailwindcss, frontend]
 ---
 

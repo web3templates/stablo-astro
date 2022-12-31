@@ -1,6 +1,6 @@
 ---
 import Footer from "@components/footer.astro";
-// import Navbar from "@components/navbar.astro";
+import Navbar from "@components/navbar.astro";
 import "@fontsource/inter/variable.css";
 import { checkImageUrl } from "@utils/all";
 import { SEO } from "astro-seo";
@@ -53,7 +53,7 @@ const makeTitle = title
     />
   </head>
   <body>
-    <!-- <Navbar /> -->
+    <Navbar />
     <slot />
     <Footer />
     <style is:global>

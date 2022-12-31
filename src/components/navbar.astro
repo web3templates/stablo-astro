@@ -124,7 +124,7 @@ const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
   </nav>
 </Container>
 
-<script>
+<script is:inline>
   const menuButton = document.getElementById("menu");
   menuButton.addEventListener("click", () => {
     [...document.querySelectorAll(".navmenu-toggle")].forEach((Element) => {

@@ -64,6 +64,13 @@ declare module 'astro:content' {
   collection: "blog",
   data: any
 },
+"every-next-level-of-your-life-will-demand-a-different-you.md": {
+  id: "every-next-level-of-your-life-will-demand-a-different-you.md",
+  slug: "every-next-level-of-your-life-will-demand-a-different-you",
+  body: string,
+  collection: "blog",
+  data: any
+},
 "how-to-become-frontend-master.md": {
   id: "how-to-become-frontend-master.md",
   slug: "how-to-become-frontend-master",
@@ -74,6 +81,27 @@ declare module 'astro:content' {
 "kitchensink.mdx": {
   id: "kitchensink.mdx",
   slug: "kitchensink",
+  body: string,
+  collection: "blog",
+  data: any
+},
+"nothing-new-about-undermining-women-autonomy.md": {
+  id: "nothing-new-about-undermining-women-autonomy.md",
+  slug: "nothing-new-about-undermining-women-autonomy",
+  body: string,
+  collection: "blog",
+  data: any
+},
+"template.md": {
+  id: "template.md",
+  slug: "template",
+  body: string,
+  collection: "blog",
+  data: any
+},
+"this-bread-pudding-will-give-you-all-the-fall-feels.md": {
+  id: "this-bread-pudding-will-give-you-all-the-fall-feels.md",
+  slug: "this-bread-pudding-will-give-you-all-the-fall-feels",
   body: string,
   collection: "blog",
   data: any
