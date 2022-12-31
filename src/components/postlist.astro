@@ -7,10 +7,14 @@ import { getFormattedDate } from "@utils/all";
 import Label from "@components/ui/label.astro";
 import { authors } from "@data/authors";
 import { categories } from "@data/category";
+import type { Category } from "@data/category";
+import type { Author } from "@data/authors";
 
 const { post, aspect, preloadImage } = Astro.props;
-const author = authors.find((item) => item.slug === post.data.author);
-const category = categories.find((item) => item.slug === post.data.category);
+const author = authors.find((item) => item.slug === post.data.author) as Author;
+const category = categories.find(
+  (item) => item.slug === post.data.category
+) as Category;
 ---
 
 <div class="cursor-pointer group">
@@ -34,7 +38,7 @@ const category = categories.find((item) => item.slug === post.data.category);
         ) : (
           <span class="absolute w-16 h-16 text-gray-200 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
             <Icon
-              class="text-black w-4 h-4"
+              class="w-4 h-4 text-black"
               name="heroicons-outline:photograph"
             />
           </span>
@@ -75,8 +79,8 @@ const category = categories.find((item) => item.slug === post.data.category);
             <Image
               src={author.image}
               alt="Author Photo"
-              width={20}
-              height={20}
+              width={40}
+              height={40}
               loading="lazy"
               class="rounded-full"
             />
