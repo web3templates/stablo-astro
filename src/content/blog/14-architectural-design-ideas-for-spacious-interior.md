@@ -14,7 +14,7 @@ In the past, researchers have identified [three important constructs](https://pu
 
 However, new evidence is revealing an overlooked construct, and it may be the most crucial one of all. Researchers are calling it “experiential appreciation”, and it refers to enjoying and appreciating sensations as you experience them — a concept that you may already recognize if you’re familiar with mindfulness.
 
-![Image](https://cdn.sanity.io/images/cijrdavx/production/4b0860eea675e1ebbb0bf25fbff6db2534cfb611-5184x3348.jpg?w=3840&q=75&fit=clip&auto=format)
+![Image](https://cdn.sanity.io/images/cijrdavx/production/4b0860eea675e1ebbb0bf25fbff6db2534cfb611-5184x3348.jpg?w=650&q=75&fit=clip&auto=format)
 
 ## The fourth construct of meaning in life
 

@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 
-const { Content } = await post.render();
+const { Content, injectedFrontmatter } = await post.render();
 
 const author = authors.find((item) => item.slug === post.data.author) as Author;
 const category = categories.find(
@@ -75,7 +75,7 @@ const category = categories.find(
                 {getFormattedDate(post.data.publishDate)}
               </time>
               <span>
-                · {Math.round(post.data.estReadingTime) || "5"} min read
+                · {Math.round(injectedFrontmatter.estReadingTime) || "5"} min read
               </span>
             </div>
           </div>
@@ -93,6 +93,8 @@ const category = categories.find(
           widths={[200, 400, 800]}
           sizes="(max-width: 640px) 90vw, 480px"
           aspectRatio="16:9"
+          width={1024}
+          heignt={576}
           alt="Thumbnail"
           loading="eager"
           class="w-full"
