@@ -38,7 +38,7 @@ In a second study, the researchers developed their own way to measure experienti
 
 Using these new measures together with the standard measures for the other three constructs, the researchers sent surveys to over 1500 people in the US and China. Instead of relying on indirect questions as they did in the previous COVID survey analysis, they collected dedicated data using well-tested measures for each construct.
 
-#### Bulletted List
+### Bulletted List
 
 - Consistently predicted
 - Coherence was a little
