@@ -1,22 +1,22 @@
-# Astroship - Astro Starter Template 🛸
+# Stablo - Astro Blog Template with MDX
 
-Astroship is a starter template for startups, marketing websites & landing pages. Built with Astro, TailwindCSS & Alpine.js.
+Stablo Astro is an Astro version of [Stablo - Next.js Blog Template](https://stablo-pro.web3templates.com/), #1 template for Next.js & Sanity CMS. This is an Astro version of the same template.
 
-This Free Template is sponsored by [Web3Templates](https://web3templates.com)
+This free template is sponsored by [Web3Templates](https://web3templates.com)
 
 ## Live Demo
 
-### [https://astroship.web3templates.com/](https://astroship.web3templates.com/)
+### [https://stablo-astro.web3templates.com/](https://stablo-astro.web3templates.com/)
 
-### [Download Astroship Template](https://web3templates.com/templates/astroship-starter-website-template-for-astro)
+### [Download Stablo Astro Template](https://web3templates.com/templates/stablo-minimal-blog-website-template)
 
 ## Deploy on Vercel
 
 Click the below link to deploy this template on Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsurjithctly%2Fastroship&project-name=astroship&repository-name=astroship&demo-title=Astroship%20-%20Astro%20Starter%20Template&demo-description=Astroship%20is%20a%20starter%20template%20for%20startups%2C%20marketing%20websites%20%26%20landing%20pages.%20Built%20with%20Astro%2C%20TailwindCSS%20%26%20Alpine.js.&demo-url=https%3A%2F%2Fastroship.web3templates.com%2F&demo-image=https%3A%2F%2Fuser-images.githubusercontent.com%2F1884712%2F200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=hhttps://github.com/web3templates/stablo-astro&project-name=stablo-astro&repository-name=stablo-astro&demo-title=Stablo%20Astro%20Blog%20Template&demo-description=Stablo%20Astro%20is%20a%20starter%20blog%20template%20for%20Astro%20built%20with%20MDX%20&%20TailwindCSS&demo-url=https%3A%2F%2Fstablo-astro.web3templates.com%2F&demo-image=https://user-images.githubusercontent.com/1884712/169838344-e32b7426-621a-45a4-aba8-afedf3377e1f.jpeg)
 
-![image](https://user-images.githubusercontent.com/1884712/200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
+![image](https://user-images.githubusercontent.com/1884712/169838344-e32b7426-621a-45a4-aba8-afedf3377e1f.jpeg)
 
 ## Installation
 
@@ -27,9 +27,9 @@ Alternatively, you can clone the project directly from this repo to your local s
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/surjithctly/astroship.git myProjectName
+git clone https://github.com/web3templates/stablo-astro.git myProjectName
 # or
-git clone https://github.com/surjithctly/astroship.git .
+git clone https://github.com/web3templates/stablo-astro.git .
 ```
 
 The `.` will clone it to the current directory so make sure you are inside your project folder first.
@@ -57,14 +57,14 @@ pnpm dev
 ### Preview & Build
 
 ```bash
-npm run preview
 npm run build
+npm run preview
 # or
-yarn preview
 yarn build
+yarn preview
 # or (recommended)
-pnpm preview
 pnpm build
+pnpm preview
 ```
 
 We recommend using [pnpm](https://pnpm.io/) to save disk space on your computer.
@@ -99,13 +99,9 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## TailwindCSS & Alpine.js
+## TailwindCSS
 
-TailwindCSS & Alpine.js are already configured in this repo, so you can start using them without any installation.
-
-## Credits
-
-[Hero Illustration](https://www.figma.com/community/file/1108400791662599811) by [Streamline](https://www.streamlinehq.com/)
+TailwindCSS is already configured in this repo, so you can start using them without any installation.
 
 ## 👀 Want to learn more?
 

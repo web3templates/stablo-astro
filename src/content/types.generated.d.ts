@@ -78,13 +78,6 @@ declare module 'astro:content' {
   collection: "blog",
   data: any
 },
-"kitchensink.mdx": {
-  id: "kitchensink.mdx",
-  slug: "kitchensink",
-  body: string,
-  collection: "blog",
-  data: any
-},
 "nothing-new-about-undermining-women-autonomy.md": {
   id: "nothing-new-about-undermining-women-autonomy.md",
   slug: "nothing-new-about-undermining-women-autonomy",
