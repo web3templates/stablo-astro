@@ -11,6 +11,7 @@ specifiers:
   '@tailwindcss/typography': ^0.5.8
   '@types/alpinejs': ^3.7.1
   astro: ^1.8.0
+  astro-color-scheme: ^1.0.1
   astro-feather-icons: ^1.0.2
   astro-icon: ^0.8.0
   astro-seo: ^0.6.1
@@ -30,6 +31,7 @@ dependencies:
   '@fontsource/inter': 4.5.14
   '@types/alpinejs': 3.7.1
   astro: 1.8.0
+  astro-color-scheme: 1.0.1
   astro-feather-icons: 1.0.2
   astro-icon: 0.8.0
   astro-seo: 0.6.1
@@ -908,6 +910,10 @@ packages:
   /astring/1.8.4:
     resolution: {integrity: sha512-97a+l2LBU3Op3bBQEff79i/E4jMD2ZLFD8rHx9B6mXyB2uQwhJQYfiDqUwtfjF4QA1F2qs//N6Cw8LetMbQjcw==}
     hasBin: true
+    dev: false
+
+  /astro-color-scheme/1.0.1:
+    resolution: {integrity: sha512-JaNBtS4AMTUnlUziFDJo1GMH945qoC1lGG0mQ4Pr6vklA3Irg5NjkJPHrQ8GbyMBm6xQKmzDFSaggwCQNj9SpA==}
     dev: false
 
   /astro-feather-icons/1.0.2:
