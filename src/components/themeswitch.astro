@@ -3,7 +3,7 @@ import { Icon } from "astro-icon";
 import { ThemeSwitch } from "astro-color-scheme";
 ---
 
-<ThemeSwitch defaultTheme="dark">
+<ThemeSwitch strategy="select" defaultTheme="dark">
   <div class="inline-flex items-center">
     <Icon class="w-4 h-4 mr-2" name="heroicons-outline:sun" />
     <select name="themeSwitch" id="themeSwitch">
