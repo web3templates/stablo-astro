@@ -10,7 +10,7 @@ specifiers:
   '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': ^0.5.9
   '@types/alpinejs': ^3.7.1
-  astro: 1.9.1
+  astro: 1.9.2
   astro-color-scheme: ^1.0.1
   astro-feather-icons: ^1.0.2
   astro-icon: ^0.8.0
@@ -30,7 +30,7 @@ dependencies:
   '@astrojs/tailwind': 2.1.3_tailwindcss@3.2.4
   '@fontsource/inter': 4.5.14
   '@types/alpinejs': 3.7.1
-  astro: 1.9.1
+  astro: 1.9.2
   astro-color-scheme: 1.0.1
   astro-feather-icons: 1.0.2
   astro-icon: 0.8.0
@@ -929,8 +929,8 @@ packages:
     resolution: {integrity: sha512-eszmxiycjfLcmoRyB8x5lCrWAwcSHs1i5riR1a5JbyJI8OQAl9tn1JvWFRuZvNH483CFdfNCczirnc805t/soA==}
     dev: false
 
-  /astro/1.9.1:
-    resolution: {integrity: sha512-aQ6rvAP4w4VCgipVYA/zPmnkuTbFrMZ/+x/sAv2W1uJHWU2iQmrVRrrjUFJl+i1TuYYlHAuC2vKK7aRyXCjD4A==}
+  /astro/1.9.2:
+    resolution: {integrity: sha512-L+Ma0eR0Aa6QZg7RF0lEs+106Ye1/zukvtq3KtsYIogAojltlwllwU9X5CwMBzFwA55NxpNp4gSRh5US/xb+8Q==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
