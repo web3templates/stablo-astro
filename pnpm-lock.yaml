@@ -10,7 +10,7 @@ specifiers:
   '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': ^0.5.9
   '@types/alpinejs': ^3.7.1
-  astro: 1.9.2
+  astro: ^1.9.2
   astro-color-scheme: ^1.0.1
   astro-feather-icons: ^1.0.2
   astro-icon: ^0.8.0
