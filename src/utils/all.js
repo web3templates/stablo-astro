@@ -4,7 +4,7 @@ import { toString } from "mdast-util-to-string";
 /** Format Date */
 export const getFormattedDate = (date) =>
   date
-    ? new Date(date).toLocaleDateString("en-us", {
+    ? new Date(date).toLocaleDateString("fa-IR", {
         year: "numeric",
         month: "short",
         day: "numeric",
