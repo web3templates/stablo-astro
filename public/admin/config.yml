@@ -23,5 +23,5 @@ collections:
       - { label: "Featured Image", name: "thumbnail", widget: "image"}
       - { label: "Category", name: "category", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
-      - { label: "Tags", name: "tags", widget: "list", field: { widget: "string" } }
+      - { label: "Tags", name: "tags", widget: "list", field: { name: "tag", widget: "string" } }
       - { label: "Body", name: "body", widget: "markdown"}
