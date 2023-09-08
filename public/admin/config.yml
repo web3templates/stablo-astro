@@ -15,14 +15,15 @@ collections:
     label: "Blog" # Used in the UI
     folder: "src/content/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{slug}}" # Filename template, e.g., title.md
     fields: # The fields for each document, usually in front matter
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - { label: "Title", name: "title", widget: "string"}
-      - { label: "Publish Date", name: "date", widget: "datetime"}
-      - { label: "Featured Image", name: "thumbnail", widget: "image"}
+      - { label: 'Description', name: 'excerpt', hint: 'Description', widget: 'string' }
+      - { label: "Publish Date", name: "publishDate", widget: "datetime"}
+      - { label: "Featured Image", name: "image", widget: "image"}
       - { label: "Source", name: "source", widget: "string", required: false}
       - { label: 'Category', name: 'category', widget: 'select', multiple: true, options: ["gaming", "streaming", "wfh", "couples"], hint: 'Category' }
-      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Author", name: "author", widget: 'select', options: ["daniel"], hint: 'Author', default: "daniel" }
       - { label: "Tags", name: "tags", widget: "list", field: { name: "tag", widget: "string" } }
       - { label: "Body", name: "body", widget: "markdown"}
