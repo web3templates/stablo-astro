@@ -26,4 +26,10 @@ export const authors: Props[] = [
     image: "./src/assets/authors/erika.webp",
     bio: "Erika Oliver is a successful entrepreuner. She is the founder of Acme Inc, a bootstrapped business that builds affordable SaaS tools for local news, indie publishers, and other small businesses.",
   },
+  {
+    name: "Daniel",
+    slug: "daniel",
+    image: "./src/assets/authors/erika.webp",
+    bio: "Daniel is a successful entrepreuner. She is the founder of Acme Inc, a bootstrapped business that builds affordable SaaS tools for local news, indie publishers, and other small businesses.",
+  },
 ];

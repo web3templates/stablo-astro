@@ -42,4 +42,32 @@ export const categories: Props[] = [
     description:
       "Get insights and inspiration from the world of design, with articles covering graphic design, product design, interior design, and more.",
   },
+  {
+    title: "Couples",
+    slug: "couples",
+    color: "pink",
+    description:
+      "Get insights and inspiration from the world of design, with articles covering graphic design, product design, interior design, and more.",
+  },
+  {
+    title: "Gaming",
+    slug: "gaming",
+    color: "green",
+    description:
+      "Get insights and inspiration from the world of design, with articles covering graphic design, product design, interior design, and more.",
+  },
+  {
+    title: "Streaming",
+    slug: "streaming",
+    color: "purple",
+    description:
+      "Get insights and inspiration from the world of design, with articles covering graphic design, product design, interior design, and more.",
+  },
+  {
+    title: "WFH",
+    slug: "wfh",
+    color: "blue",
+    description:
+      "Get insights and inspiration from the world of design, with articles covering graphic design, product design, interior design, and more.",
+  },
 ];
