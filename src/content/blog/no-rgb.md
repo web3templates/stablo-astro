@@ -1,14 +1,19 @@
 ---
-layout: blog
 title: no RGB
 excerpt: 2019 April Battlestation from Reddit
-publishDate: 2023-09-08T15:55:00.972Z
+publishDate: "2023-09-08T15:55:00.972Z"
 image: /src/assets/image_2023-09-08_175539612.png
 source: https://www.reddit.com/r/battlestations/comments/bbcimq/update_new_monitor_ditched_rgb_new_peripherals/?utm_source=ifttt
-category:
-  - gaming
+category: gaming
 author: daniel
+tags:
+  - design
+  - architecture
+  - interior
 ---
+
+No RGB Battlestation
+
 ![](/src/assets/image_2023-09-08_175635574.png)
 
 ![](/src/assets/image_2023-09-08_175706847.png)
