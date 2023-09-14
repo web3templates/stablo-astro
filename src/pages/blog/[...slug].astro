@@ -16,6 +16,7 @@ type Props = CollectionEntry<"blog">;
 
 export async function getStaticPaths() {
   const blog = await getCollection("blog");
+
   return blog.map((post) => ({
     params: { slug: post.slug },
     props: { post },
@@ -24,7 +25,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 
-const { Content, injectedFrontmatter } = await post.render();
+const { Content, remarkPluginFrontmatter } = await post.render();
 
 const author = authors.find((item) => item.slug === post.data.author) as Author;
 const category = categories.find(
@@ -75,7 +76,8 @@ const category = categories.find(
                 {getFormattedDate(post.data.publishDate)}
               </time>
               <span>
-                · {Math.round(injectedFrontmatter.estReadingTime) || "5"} min read
+                · {Math.round(remarkPluginFrontmatter?.estReadingTime) || "5"} min
+                read
               </span>
             </div>
           </div>

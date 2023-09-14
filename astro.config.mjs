@@ -9,9 +9,6 @@ import { remarkReadingTime } from "./src/utils/all";
 
 export default defineConfig({
   site: "https://stablo-astro.web3templates.com",
-  experimental: {
-    contentCollections: true,
-  },
   markdown: {
     remarkPlugins: [remarkReadingTime],
     rehypePlugins: ["rehype-plugin-image-native-lazy-loading"],
