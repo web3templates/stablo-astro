@@ -1,7 +1,7 @@
 ---
 title: "This Bread Pudding Will Give You All the Fall Feels"
 excerpt: "We always knew but now we know. The tech elite mean to leave us all behind."
-publishDate: "2022-12-27T11:39:36.050Z"
+publishDate: 2022-12-27T11:39:36.050Z
 image: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=987&h=700"
 category: "travel"
 author: "erika-oliver"
