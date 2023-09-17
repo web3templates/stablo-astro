@@ -54,3 +54,16 @@ collections:
             - { label: "Href", name: "href", widget: "string" }
             - { label: "External", name: "external", widget: "boolean", default: false }
             - { label: "Badge", name: "badge", widget: "string", required: false }
+  - name: 'general'
+    label: 'General'
+    - label: "Navigation"
+      name: "topnav"
+      file: "src/data/menu.yml"
+      fields: 
+        - label: "Navigation Items"
+          widget: "list"
+          fields:
+            - { label: "Label", name: "label", widget: "string" }
+            - { label: "Href", name: "href", widget: "string" }
+            - { label: "External", name: "external", widget: "boolean", default: false }
+            - { label: "Badge", name: "badge", widget: "string", required: false }
