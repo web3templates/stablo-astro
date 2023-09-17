@@ -39,3 +39,4 @@ collections:
               - { label: "Left Position", name: "left", widget: "string", hint: "e.g. 25%" }
               - { label: "Link", name: "link", widget: "string", required: false }
               - { label: "Tooltip Text", name: "text", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown"}
