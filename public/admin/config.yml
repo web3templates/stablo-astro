@@ -26,3 +26,16 @@ collections:
       - { label: "Author", name: "author", widget: 'select', options: ["daniel"], hint: 'Author', default: "daniel" }
       - { label: "Tags", name: "tags", widget: "list", field: { name: "tag", widget: "string" } }
       - { label: "Body", name: "body", widget: "markdown"}
+      - label: "Images with Dots"
+        name: "imagesWithDots"
+        widget: "list"
+        fields:
+          - { label: "Image Source", name: "src", widget: "image" }
+          - label: "Dots"
+            name: "dots"
+            widget: "list"
+            fields:
+              - { label: "Top Position", name: "top", widget: "string", hint: "e.g. 50%" }
+              - { label: "Left Position", name: "left", widget: "string", hint: "e.g. 25%" }
+              - { label: "Link", name: "link", widget: "string", required: false }
+              - { label: "Tooltip Text", name: "text", widget: "string" }
