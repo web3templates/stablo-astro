@@ -40,14 +40,18 @@ collections:
               - { label: "Tooltip Text", name: "text", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown"}
   - name: "global"
-    label: "Global Configuration"
-    files:
-      - file: "src/data/menu.yml"
-        label: "Menu"
-        name: "menu"
-        widget: "list"
-        fields:
-          - { label: "Label", name: "label", widget: "string" }
-          - { label: "Href", name: "href", widget: "string" }
-          - { label: "External", name: "external", widget: "boolean", default: false }
-          - { label: "Badge", name: "badge", widget: "string", required: false }
+  label: "Global Configuration"
+  files:
+    - file: "src/data/menu.yml"
+      label: "Menu"
+      name: "menu"
+      fields:
+        - label: "Menu Items"
+          name: "menu-items"
+          widget: "list"
+          fields:
+            - { label: "Label", name: "label", widget: "string" }
+            - { label: "Href", name: "href", widget: "string" }
+            - { label: "External", name: "external", widget: "boolean", default: false }
+            - { label: "Badge", name: "badge", widget: "string", required: false }
+
