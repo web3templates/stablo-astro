@@ -13,16 +13,33 @@ tags:
 imagesWithDots:
   - src: ./src/assets/image_2023-09-08_175635574.png
     dots:
-      - top: "10%"
-        left: "20%"
-        text: "Dot 1"
-        link: "https://link1.com"
+      - top: 10%
+        left: 20%
+        text: Dot 1
+        link: https://link1.com
   - src: ./src/assets/image_2023-09-08_175706847.png
     dots:
-      - top: "50%"
-        left: "50%"
-        text: "Dot 2"
-        link: "https://link2.com"
+      - top: 50%
+        left: 50%
+        text: Dot 2
+        link: https://link2.com
+  - src: /src/assets/image_2023-09-08_175729702.png
+    dots:
+      - left: "20"
+        top: "80"
+        text: StreamDeck
+  - src: /src/assets/image_2023-09-08_175759216.png
+    dots:
+      - left: "20"
+        top: "70"
+        text: Mechanical Keyboard
+  - src: /src/assets/image_2023-09-08_175817446.png
+    dots:
+      - top: "50"
+        left: "50"
+        text: Sennheiser
+  - src: /src/assets/image_2023-09-08_175910285.png
+  - src: /src/assets/image_2023-09-08_175941370.png
 ---
 
 No RGB Battlestation
