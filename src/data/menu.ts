@@ -1,38 +1,20 @@
+import fs from 'fs';
+import path from 'path';
+
+// Define the Menu interface
 export interface Menu {
     label: string;
     href: string;
     external?: boolean;
     badge?: string;
-  }
-  
-const menu: Menu[] = [
-    {
-        label: "Home",
-        href: "/",
-    },
-    {
-        label: "About",
-        href: "/about",
-    },
-    {
-        label: "Contact",
-        href: "/contact",
-    },
-    {
-        label: "Archive",
-        href: "/archive",
-    },
-    {
-        label: "Github",
-        href: "https://github.com/web3templates/stablo-astro",
-        external: true,
-        badge: "new",
-    },
-    {
-        label: "Download",
-        href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
-        external: true,
-    },
-];
+}
 
+// Read the JSON data from the menu.json file
+const menuFilePath = path.join(process.cwd(), 'src/data/menu.json');
+const menuData = fs.readFileSync(menuFilePath, 'utf8');
+
+// Parse the JSON data to get the menu array
+const menu: Menu[] = JSON.parse(menuData);
+
+// Export the menu array for use in other parts of your application
 export default menu;
