@@ -38,7 +38,7 @@ collections:
               - { label: "Left Position", name: "left", widget: "number", min: 1, max: 100, step: 5, value_type: "int", hint: "e.g. 25%" }
               - { label: "Link", name: "link", widget: "string", required: false }
               - { label: "Tooltip Text", name: "text", widget: "string" }
-      - label: "Images with Dots"
-        name: "imagesWithDots"
+      - label: "Images with Dots2"
+        name: "imagesWithDots2"
         widget: "imageWithDots"
       - { label: "Body", name: "body", widget: "markdown"}
