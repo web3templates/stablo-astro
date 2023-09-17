@@ -1,0 +1,120 @@
+---
+import { Image } from "@astrojs/image/components";
+
+const { src, dots } = Astro.props;
+---
+
+<script>
+    function handleImageTap(event) {
+      const imageMap = event.currentTarget;
+      if (imageMap.classList.contains('active')) {
+        imageMap.classList.remove('active');
+      } else {
+        imageMap.classList.add('active');
+      }
+    }
+  
+    function handleDotClick(event, link) {
+        event.stopPropagation();
+        if (link) {
+            window.open(link, "_blank");
+        }
+    }
+</script>
+
+<style>
+    .image-map::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+        opacity: 0;
+        pointer-events: none; /* ensures the overlay doesn't interfere with click events */
+        transition: opacity 0.3s ease;
+        z-index: 1;
+    }
+
+    .image-map:hover::before, .image-map.active::before {
+        opacity: 1;
+    }
+    .image-map {
+        position: relative;
+        display: inline-block;
+    }
+
+    .image-map img {
+        width: 100%;
+        height: auto;
+        display: block;
+        z-index: 0;
+    }
+
+    .image-map:hover .dot, .image-map.active .dot {
+        display: block;
+    }
+
+    .dot {
+        display: none; /* Initially hide the dots */
+        position: absolute;
+        z-index: 2;
+        width: 10px;
+        height: 10px;
+        background-color: white;
+        border: 2px solid grey;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .dot-text {
+        display: none;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        white-space: nowrap;
+    }
+
+    .dot-text a {
+        color: #66B2FF;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .dot-text a:hover {
+        text-decoration: underline;
+    }
+
+
+    .dot:hover {
+        background-color: transparent;
+    }
+
+    .dot:hover .dot-text {
+        display: block;
+    }
+
+</style>
+
+<div class="image-map" on:touchstart={() => handleImageTap(event)}>
+    <Image src={src} alt="Description of Image" width={1024} height={576} />
+    {dots.map(dot => (
+      <div 
+        class="dot" 
+        data-link={dot.link} 
+        style={{ top: dot.top, left: dot.left }}
+        on:click={(event) => handleDotClick(event, dot.link)}
+      >
+        <span class="dot-text">
+          {dot.text} <a href={dot.link} target="_blank" rel="noopener noreferrer">Learn More</a>
+        </span>
+      </div>
+    ))}
+</div>

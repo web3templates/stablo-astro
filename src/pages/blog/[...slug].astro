@@ -1,5 +1,6 @@
 ---
 import { Image, Picture } from "@astrojs/image/components";
+import Imagemap from "@components/ui/imagemap.astro";
 import Authorcard from "@components/authorcard.astro";
 import Container from "@components/container.astro";
 import Label from "@components/ui/label.astro";
@@ -104,6 +105,17 @@ const category = categories.find(
       )
     }
   </div>
+
+  <!-- Render the images with dots using the Imagemap component -->
+  <div>
+    {post.data.imagesWithDots && post.data.imagesWithDots.map(image => (
+      <div class="flex justify-center my-5">
+        <Imagemap src={image.src} dots={image.dots} />
+      </div>
+    ))}
+  </div>
+
+
 
   <Container>
     <article class="max-w-screen-md mx-auto">

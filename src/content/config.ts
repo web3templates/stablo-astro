@@ -10,6 +10,19 @@ const BlogPosts = defineCollection({
     tags: z.array(z.string()),
     image: z.string().optional(),
     publishDate: z.date(),
+    imagesWithDots: z.array(
+      z.object({
+        src: z.string(),
+        dots: z.array(
+          z.object({
+            top: z.string(),
+            left: z.string(),
+            text: z.string(),
+            link: z.string(),
+          })
+        ).optional(),
+      })
+    ).optional(),
   }),
 });
 
