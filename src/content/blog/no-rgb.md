@@ -11,13 +11,13 @@ tags:
   - architecture
   - interior
 imagesWithDots:
-  - src: /src/assets/image_2023-09-08_175635574.png
+  - src: ./src/assets/image_2023-09-08_175635574.png
     dots:
       - top: "10%"
         left: "20%"
         text: "Dot 1"
         link: "https://link1.com"
-  - src: /src/assets/image_2023-09-08_175706847.png
+  - src: ./src/assets/image_2023-09-08_175706847.png
     dots:
       - top: "50%"
         left: "50%"
