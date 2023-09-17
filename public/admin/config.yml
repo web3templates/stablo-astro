@@ -41,6 +41,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown"}
   - name: "topnav"
     label: "Top Navigation"
+    type: "file"
     file: "src/data/menu.ts"
     fields:
       - label: "Menu Items"
