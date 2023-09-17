@@ -46,13 +46,3 @@ imagesWithDots:
 ---
 
 No RGB Battlestation
-
-![](/src/assets/image_2023-09-08_175729702.png)
-
-![](/src/assets/image_2023-09-08_175759216.png)
-
-![](/src/assets/image_2023-09-08_175817446.png)
-
-![](/src/assets/image_2023-09-08_175910285.png)
-
-![](/src/assets/image_2023-09-08_175941370.png)
