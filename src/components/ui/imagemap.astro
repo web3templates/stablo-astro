@@ -90,7 +90,6 @@ const isNumeric = (value) => !isNaN(value) && !isNaN(parseFloat(value));
         animation: none;
     }
     .dot-text {
-        display: none;
         position: absolute;
         bottom: 100%;
         left: 50%;
@@ -100,8 +99,13 @@ const isNumeric = (value) => !isNaN(value) && !isNaN(parseFloat(value));
         padding: 5px;
         border-radius: 5px;
         white-space: nowrap;
+        opacity: 0; /* Make the tooltip invisible by default */
+        transition: opacity 0.5s ease; /* Add a fade-in transition */
+        pointer-events: none; /* Ensures the tooltip doesn't interfere with click events */
     }
-
+    .dot:hover .dot-text {
+        opacity: 1;
+    }
     .dot-text a {
         color: #66B2FF;
         font-weight: bold;
