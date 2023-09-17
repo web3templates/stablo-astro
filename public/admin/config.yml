@@ -45,6 +45,7 @@ collections:
       - file: "src/data/menu.yml"
         label: "Menu"
         name: "menu"
+        widget: "list"
         fields:
           - { label: "Label", name: "label", widget: "string" }
           - { label: "Href", name: "href", widget: "string" }
