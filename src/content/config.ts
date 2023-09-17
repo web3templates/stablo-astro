@@ -15,8 +15,8 @@ const BlogPosts = defineCollection({
         src: z.string(),
         dots: z.array(
           z.object({
-            top: z.string(),
-            left: z.string(),
+            top: z.number(),
+            left: z.number(),
             text: z.string(),
             link: z.string(),
           })

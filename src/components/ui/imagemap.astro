@@ -1,7 +1,9 @@
 ---
 import { Image } from "@astrojs/image/components";
 
-const { src, dots } = Astro.props;
+const { src, dots = [] } = Astro.props;
+const hasDots = dots.length > 0;
+const isNumeric = (value) => !isNaN(value) && !isNaN(parseFloat(value));
 ---
 
 <script>
@@ -20,6 +22,7 @@ const { src, dots } = Astro.props;
             window.open(link, "_blank");
         }
     }
+
 </script>
 
 <style>
@@ -37,9 +40,10 @@ const { src, dots } = Astro.props;
         z-index: 1;
     }
 
-    .image-map:hover::before, .image-map.active::before {
-        opacity: 1;
-    }
+    .image-map.has-dots:hover::before, .image-map.has-dots.active::before {
+    opacity: 1;
+}
+
     .image-map {
         position: relative;
         display: inline-block;
@@ -119,13 +123,13 @@ const { src, dots } = Astro.props;
 
 </style>
 
-<div class="image-map" on:touchstart={() => handleImageTap(event)}>
+<div class={`image-map ${hasDots ? 'has-dots' : ''}`} on:touchstart={() => handleImageTap(event)}>
     <Image src={src} alt="Description of Image" width={1024} height={576} />
     {dots.map(dot => (
       <div 
         class="dot" 
         data-link={dot.link} 
-        style={{ top: dot.top, left: dot.left }}
+        style={{ top: isNumeric(dot.top) ? `${dot.top}%` : dot.top, left: isNumeric(dot.left) ? `${dot.left}%` : dot.left }}
         on:click={(event) => handleDotClick(event, dot.link)}
       >
         <span class="dot-text">

@@ -34,8 +34,8 @@ collections:
             name: "dots"
             widget: "list"
             fields:
-              - { label: "Top Position", name: "top", widget: "string", hint: "e.g. 50%" }
-              - { label: "Left Position", name: "left", widget: "string", hint: "e.g. 25%" }
+              - { label: "Top Position", name: "top", widget: "number", min: 1, max: 100, step: 5, value_type: "int", hint: "e.g. 50%" }
+              - { label: "Left Position", name: "left", widget: "number", min: 1, max: 100, step: 5, value_type: "int", hint: "e.g. 25%" }
               - { label: "Link", name: "link", widget: "string", required: false }
               - { label: "Tooltip Text", name: "text", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown"}
