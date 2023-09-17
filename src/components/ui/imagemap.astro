@@ -56,19 +56,35 @@ const { src, dots } = Astro.props;
         display: block;
     }
 
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
     .dot {
         display: none; /* Initially hide the dots */
         position: absolute;
         z-index: 2;
-        width: 10px;
-        height: 10px;
-        background-color: white;
-        border: 2px solid grey;
+        width: 15px;
+        height: 15px;
+        background-color: #007BFF;
+        border: 2px solid white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         border-radius: 50%;
         cursor: pointer;
         transition: all 0.3s ease;
+        animation: pulse 1.5s infinite;
     }
-
+    .dot:hover {
+        animation: none;
+    }
     .dot-text {
         display: none;
         position: absolute;
