@@ -73,7 +73,6 @@ const isNumeric = (value) => !isNaN(value) && !isNaN(parseFloat(value));
     }
 
     .dot {
-        display: none; /* Initially hide the dots */
         position: absolute;
         z-index: 2;
         width: 15px;
@@ -85,10 +84,23 @@ const isNumeric = (value) => !isNaN(value) && !isNaN(parseFloat(value));
         cursor: pointer;
         transition: all 0.3s ease;
         animation: pulse 1.5s infinite;
+        overflow: visible; /* Allow child elements to be visible outside the boundary */
     }
+
+    .dot::before {
+        content: "";
+        position: absolute;
+        top: -20px; /* Extend the hoverable area 20px above the dot */
+        left: -20px; /* Extend the hoverable area 20px to the left of the dot */
+        right: -20px; /* Extend the hoverable area 20px to the right of the dot */
+        bottom: -20px; /* Extend the hoverable area 20px below the dot */
+        z-index: -1; /* Place it behind the dot */
+    }
+
     .dot:hover {
         animation: none;
     }
+
     .dot-text {
         position: absolute;
         bottom: 100%;
@@ -101,11 +113,13 @@ const isNumeric = (value) => !isNaN(value) && !isNaN(parseFloat(value));
         white-space: nowrap;
         opacity: 0; /* Make the tooltip invisible by default */
         transition: opacity 0.5s ease; /* Add a fade-in transition */
-        pointer-events: none; /* Ensures the tooltip doesn't interfere with click events */
+        pointer-events: auto; /* Allow click events */
     }
+
     .dot:hover .dot-text {
         opacity: 1;
     }
+
     .dot-text a {
         color: #66B2FF;
         font-weight: bold;
