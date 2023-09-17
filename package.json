@@ -23,6 +23,7 @@
     "astro-feather-icons": "^1.0.2",
     "astro-icon": "^0.8.0",
     "astro-seo": "^0.6.1",
+    "js-yaml": "^4.1.0",
     "mdast-util-to-string": "^3.1.0",
     "reading-time": "^1.5.0",
     "rehype-plugin-image-native-lazy-loading": "^1.2.0",

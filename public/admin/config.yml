@@ -42,7 +42,7 @@ collections:
   - name: "topnav"
     label: "Top Navigation"
     type: "file"
-    file: "src/data/menu.json"
+    file: "src/data/menu.yml"
     fields:
       - label: "Menu Items"
         name: "menu"
