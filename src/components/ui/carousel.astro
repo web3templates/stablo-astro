@@ -2,7 +2,7 @@
 // Carousel.astro
 import Imagemap from "@components/ui/imagemap.astro";
 const { imagesWithDots } = Astro.props;
-const imagesWithDotsNumber = imagesWithDots.length;
+const imagesWithDotsNumber = imagesWithDots ? imagesWithDots.length : 0;
 ---
 <!-- Styles -->
 <style>
