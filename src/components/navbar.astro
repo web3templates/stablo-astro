@@ -2,6 +2,7 @@
 import Container from "@components/container.astro";
 import logoImage from "@assets/logo.svg";
 import darkLogo from "@assets/logo-dark.svg";
+import menu from '@data/menu';
 import { Image } from "@astrojs/image/components";
 
 interface Menu {
@@ -10,107 +11,25 @@ interface Menu {
   external?: boolean;
   badge?: string;
 }
-const leftmenu: Menu[] = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-];
-
-const rightmenu: Menu[] = [
-  {
-    label: "Archive",
-    href: "/archive",
-  },
-  {
-    label: "Github",
-    href: "https://github.com/web3templates/stablo-astro",
-    external: true,
-    badge: "new",
-  },
-  {
-    label: "Download",
-    href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
-    external: true,
-  },
-];
-
-const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
 ---
 
 <Container>
   <nav>
     <div class="flex flex-wrap justify-between md:gap-10 md:flex-nowrap">
-      <div
-        class="flex-col items-center justify-start order-1 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:order-none md:flex-1">
-        {
-          leftmenu.map((item) => (
-            <a
-              href={item.href}
-              class="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500">
-              {item.label}
-            </a>
-          ))
-        }
-      </div>
-
-      <div class="flex items-center justify-between w-full md:w-auto">
+      <!-- Logo -->
+      <div class="flex items-center">
         <a class="w-28 dark:hidden" href="/">
           <Image src={logoImage} alt="Logo" />
         </a>
-
         <a class="hidden w-28 dark:block" href="/">
           <Image src={darkLogo} alt="Logo" />
         </a>
-
-        <button
-          id="menu"
-          aria-label="Toggle Menu"
-          class="px-2 py-1 ml-auto text-gray-500 rounded-md md:hidden focus:text-blue-500 focus:outline-none dark:text-gray-300">
-          <svg
-            class="w-6 h-6 fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24">
-            <path
-              class="navmenu-toggle"
-              fill-rule="evenodd"
-              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-            ></path>
-
-            <path
-              class="navmenu-toggle hidden"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-            ></path>
-          </svg>
-        </button>
-      </div><div
-        class="flex-col items-center justify-start order-2 hidden w-full md:flex md:flex-row md:w-auto md:flex-1 md:order-none">
-        {
-          rightmenu.map((item) => (
-            <a
-              href={item.href}
-              class="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500">
-              {item.label}
-            </a>
-          ))
-        }
       </div>
-    </div>
-    <div class="navmenu-toggle hidden">
-      <div
-        class="flex flex-col items-center justify-start order-2 w-full md:hidden">
+
+      <!-- Menu Items -->
+      <div class="flex items-center">
         {
-          mobilemenu.map((item, index) => (
+          menu.map((item) => (
             <a
               href={item.href}
               class="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
@@ -120,7 +39,30 @@ const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
             </a>
           ))
         }
+
+        <!-- Toggle Button -->
+        <button
+          id="menu"
+          aria-label="Toggle Menu"
+          class="px-2 py-1 ml-auto text-gray-500 rounded-md md:hidden focus:text-blue-500 focus:outline-none dark:text-gray-300">
+          <!-- SVG for the button here -->
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="navmenu-toggle hidden">
+      {
+        menu.map((item) => (
+          <a
+            href={item.href}
+            class="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
+            target={item.external ? "_blank" : ""}
+            rel={item.external ? "noopener" : ""}>
+            {item.label}
+          </a>
+        ))
+      }
     </div>
   </nav>
 </Container>
