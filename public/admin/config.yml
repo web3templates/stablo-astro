@@ -41,12 +41,10 @@ collections:
       - { label: "Body", name: "body", widget: "markdown"}
   - name: "topnav"
     label: "Top Navigation"
-    type: "file"
-    file: "src/data/menu.yml"
-    fields:
-      - label: "Menu Items"
+    files:
+      - file: "src/data/menu.yml"
+        label: "Menu"
         name: "menu"
-        widget: "list"
         fields:
           - { label: "Label", name: "label", widget: "string" }
           - { label: "Href", name: "href", widget: "string" }
