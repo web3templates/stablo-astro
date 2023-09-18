@@ -1,5 +1,5 @@
 ---
-title: no RGB
+title: no RGB Battlestation
 excerpt: 2019 April Battlestation from Reddit
 publishDate: 2023-09-08T15:55:00.972Z
 image: ./src/assets/image_2023-09-08_175539612.png
@@ -44,9 +44,7 @@ imagesWithDots:
   - src: ./src/assets/image_2023-09-08_175910285.png
   - src: ./src/assets/image_2023-09-08_175941370.png
 ---
-No RGB Battlestation
-
-## \[System Specs] 
+## \[System Specs]
 
 * GPU: EVGA RTX 2080 TI Hybrid
 * CPU: Intel Core I7 8700K 
@@ -60,13 +58,7 @@ No RGB Battlestation
 * Fan Hub: NZXT Grid V2
 * PSU Cables: Cablemod ModFlex Cables
 
-
-
-
-
-
-
-## \[Peripherals] 
+## \[Peripherals]
 
 * Monitor: LG 34GK950F-B | 3440X1440 |144 Hz |HDR | IPS | 21:9
 * DAC: JDS Labs Black Custom Objective2+ODAC
@@ -81,12 +73,6 @@ No RGB Battlestation
 * Microphone: Fifine K670
 * Macropad: Max Falcon 8 RGB
 * Turntable: Audio-Technica AT-LP60BK
-
-
-
-
-
-
 
 ## \[Misc]
 
