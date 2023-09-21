@@ -32,4 +32,10 @@ export const authors: Props[] = [
     image: "./src/assets/authors/aikon.jpg",
     bio: "ehehe",
   },
+  {
+    name:"wakayume",
+    slug:"waka-yume",
+    image:"yannguusagi.jpg",
+    bio:"clarkmember",
+  },
 ];
