@@ -26,4 +26,10 @@ export const authors: Props[] = [
     image:"./src/assets/authors/yannguusagi.jpg",
     bio:"clarkmember",
   },
+  {
+    name:"AIアーティスト選手権 実行委員会",
+    slug:"ai-art",
+    image:"./src/assets/authors/ai-art.jpg",
+    bio:"当委員会は、AIが持つ可能性を探究する目的で設立された機関です。尚、所属メンバー数は1名です。",
+  },
 ];
