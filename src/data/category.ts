@@ -1,12 +1,18 @@
 export interface Props {
   title: string;
   slug: string;
-  color: "green" | "blue" | "orange" | "purple" | "pink";
+  color: "green" | "blue" | "orange" | "purple" | "pink" | "yellow";
   description: string;
 }
 export type Category = Props;
 
 export const categories: Props[] = [
+  {
+    title: "企画・イベント",
+    slug: "project",
+    color: "yellow",
+    description: "何らかの企画やイベントごとに関わる記事カテゴリです",
+  },
   {
     title: "Technology",
     slug: "technology",
