@@ -11,19 +11,19 @@ import Link from "@components/ui/link.astro";
   <Container>
     <Pagetitle>
       <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="desc">I am an enthusiastic developer.</Fragment>
     </Pagetitle>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+<div class="flex justify-center items-center">
       {
-        authors.slice(0, 3).map((item) => (
+        authors.slice(0, 1).map((item) => (
           <div class="group">
             <div class="w-full aspect-square">
               <Image
                 src={item.image}
                 format="avif"
-                width={580}
-                height={580}
+                width={300}
+                height={300}
                 alt="Team"
                 class="w-full h-full object-cover rounded transition  group-hover:-translate-y-1 group-hover:shadow-xl"
               />
@@ -40,11 +40,22 @@ import Link from "@components/ui/link.astro";
       }
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="mx-auto max-w-xl text-center mt-14">
       <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        Proficient with Python, Flask, and JavaScript-based programming. Geological modeling and Geographic Information System (GIS) background.
       </p>
       <div class="mt-8">
         <Link href="/contact" style="primary">Get in touch</Link>
