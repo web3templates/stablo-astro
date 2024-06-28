@@ -10,7 +10,7 @@ module.exports = {
         gray: colors.neutral,
       },
       fontFamily: {
-        sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
+        sans: ["Inter Variable", "Inter", ...defaultTheme.fontFamily.sans],
       },
       aspectRatio: {
         "4/3": "4 / 3",
@@ -20,8 +20,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/line-clamp"),
-    require("@tailwindcss/typography"),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };

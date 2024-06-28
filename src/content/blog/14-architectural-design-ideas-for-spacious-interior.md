@@ -1,8 +1,8 @@
 ---
 title: "14 Architectural Design Ideas for a Spacious Interior"
 excerpt: "Ornare cum cursus laoreet sagittis nunc fusce posuere per euismod dis vehicula a, semper fames lacus maecenas dictumst pulvinar neque enim non potenti. Torquent hac sociosqu eleifend potenti."
-publishDate: "2022-12-30T11:39:36.050Z"
-image: "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=927&h=927"
+publishDate: "2024-05-30T11:39:36.050Z"
+image: "../../assets/blog/blog3.avif"
 category: "lifestyle"
 author: "mario-sanchez"
 tags: [design, architecture, interior]

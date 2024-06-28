@@ -1,16 +1,16 @@
 ---
-import { Image, Picture } from "@astrojs/image/components";
-import Authorcard from "@components/authorcard.astro";
-import Container from "@components/container.astro";
-import Label from "@components/ui/label.astro";
-import { authors } from "@data/authors";
-import { categories } from "@data/category";
-import Layout from "@layouts/Layout.astro";
-import { getFormattedDate } from "@utils/all";
+import { Image, Picture } from "astro:assets";
+import Authorcard from "@/components/authorcard.astro";
+import Container from "@/components/container.astro";
+import Label from "@/components/ui/label.astro";
+import { authors } from "@/data/authors";
+import { categories } from "@/data/category";
+import Layout from "@/layouts/Layout.astro";
+import { getFormattedDate } from "@/utils/all";
 import { CollectionEntry, getCollection } from "astro:content";
 
-import type { Author } from "@data/authors";
-import type { Category } from "@data/category";
+import type { Author } from "@/data/authors";
+import type { Category } from "@/data/category";
 
 type Props = CollectionEntry<"blog">;
 
@@ -31,6 +31,7 @@ const author = authors.find((item) => item.slug === post.data.author) as Author;
 const category = categories.find(
   (item) => item.slug === post.data.category
 ) as Category;
+
 ---
 
 <Layout
@@ -50,7 +51,7 @@ const category = categories.find(
 
       <div class="flex justify-center mt-3 space-x-3 text-gray-500">
         <div class="flex items-center gap-3">
-          <div class="relative flex-shrink-0 w-10 h-10">
+          <div class="relative flex-shrink-0">
             {
               author.image && (
                 <Image
@@ -59,7 +60,7 @@ const category = categories.find(
                   width={80}
                   height={80}
                   loading="eager"
-                  class="rounded-full"
+                  class="rounded-full object-cover w-10 h-10"
                 />
               )
             }
@@ -75,10 +76,10 @@ const category = categories.find(
                 datetime={post.data.publishDate}>
                 {getFormattedDate(post.data.publishDate)}
               </time>
-              <span>
+              <!-- <span>
                 · {Math.round(remarkPluginFrontmatter?.estReadingTime) || "5"} min
                 read
-              </span>
+              </span> -->
             </div>
           </div>
         </div>
@@ -94,7 +95,6 @@ const category = categories.find(
           src={post.data.image}
           widths={[200, 400, 800]}
           sizes="(max-width: 640px) 90vw, 480px"
-          aspectRatio="16:9"
           width={1024}
           heignt={576}
           alt="Thumbnail"
@@ -123,7 +123,7 @@ const category = categories.find(
       <div class="flex justify-center mt-7 mb-7">
         <a
           href="/"
-          class="px-5 py-3 text-sm text-blue-600 transition rounded-md dark:text-blue-500 bg-blue-50 hover:bg-blue-100">
+          class="px-5 py-3 text-sm text-blue-600 transition rounded-md dark:bg-gray-700 dark:text-white bg-blue-50 hover:bg-blue-100">
           ← View all posts
         </a>
       </div>

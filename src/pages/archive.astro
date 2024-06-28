@@ -1,9 +1,9 @@
 ---
-import Container from "@components/container.astro";
-import Pagetitle from "@components/pagetitle.astro";
-import Postlist from "@components/postlist.astro";
-import Layout from "@layouts/Layout.astro";
-import { latestPosts } from "@utils/content";
+import Container from "@/components/container.astro";
+import Pagetitle from "@/components/pagetitle.astro";
+import Postlist from "@/components/postlist.astro";
+import Layout from "@/layouts/Layout.astro";
+import { latestPosts } from "@/utils/content";
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 // const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 //   (a, b) =>

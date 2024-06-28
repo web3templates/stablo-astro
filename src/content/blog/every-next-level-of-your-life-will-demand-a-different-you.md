@@ -1,8 +1,8 @@
 ---
 title: "Every Next Level of Your Life Will Demand a Different You"
 excerpt: "Some description"
-publishDate: "2022-11-24T11:39:36.050Z"
-image: "https://images.unsplash.com/photo-1501747315-124a0eaca060?auto=format&fit=crop&w=987&h=987"
+publishDate: "2024-03-24T11:39:36.050Z"
+image: "../../assets/blog/blog6.avif"
 category: "personal"
 author: "joshua-wood"
 tags: [tag1, tag2, tag3]

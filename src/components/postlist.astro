@@ -1,14 +1,14 @@
 ---
 import cx from "classnames";
 
-import { Image, Picture } from "@astrojs/image/components";
-import Label from "@components/ui/label.astro";
-import type { Author } from "@data/authors";
-import { authors } from "@data/authors";
-import type { Category } from "@data/category";
-import { categories } from "@data/category";
-import { getFormattedDate } from "@utils/all";
-import { Icon } from "astro-icon";
+import { Image, Picture } from "astro:assets";
+import Label from "@/components/ui/label.astro";
+import type { Author } from "@/data/authors";
+import { authors } from "@/data/authors";
+import type { Category } from "@/data/category";
+import { categories } from "@/data/category";
+import { getFormattedDate } from "@/utils/all";
+import { Icon } from "astro-icon/components";
 
 const { post, aspect, preloadImage } = Astro.props;
 const author = authors.find((item) => item.slug === post.data.author) as Author;
@@ -30,7 +30,6 @@ const category = categories.find(
             src={post.data.image}
             widths={[200, 400, 800]}
             sizes="(max-width: 640px) 90vw, 480px"
-            aspectRatio={aspect === "landscape" ? "16:9" : "1:1"}
             alt="Thumbnail"
             loading={preloadImage ? "eager" : "lazy"}
             class="w-full h-full rounded-md"
@@ -39,7 +38,7 @@ const category = categories.find(
           <span class="absolute w-16 h-16 text-gray-200 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
             <Icon
               class="w-4 h-4 text-black"
-              name="heroicons-outline:photograph"
+              name="heroicons:photo"
             />
           </span>
         )

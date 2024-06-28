@@ -1,8 +1,8 @@
 ---
 title: "How to become a Frontend Master"
 excerpt: "Ornare cum cursus laoreet sagittis nunc fusce posuere per euismod dis vehicula a, semper fames lacus maecenas dictumst pulvinar neque enim non potenti. Torquent hac sociosqu eleifend potenti."
-publishDate: "2022-11-07T15:39:36.050Z"
-image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9"
+publishDate: "2024-03-07T15:39:36.050Z"
+image: "../../assets/blog/blog7.jpg"
 category: "travel"
 author: "erika-oliver"
 tags: [astro, tailwindcss, frontend]
