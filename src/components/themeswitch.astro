@@ -1,11 +1,11 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import { ThemeSwitch } from "astro-color-scheme";
 ---
 
 <ThemeSwitch strategy="select" defaultTheme="dark">
   <div class="inline-flex items-center">
-    <Icon class="w-4 h-4 mr-2" name="heroicons-outline:sun" />
+    <Icon class="w-4 h-4 mr-2" name="heroicons:sun" />
     <select name="themeSwitch" id="themeSwitch">
       <option value="system">System</option>
       <option value="dark">Dark</option>

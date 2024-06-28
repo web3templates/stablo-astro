@@ -1,8 +1,8 @@
 ---
 title: " Introduction to the Essential Data Structures & Algorithms"
 excerpt: "Ornare cum cursus laoreet sagittis nunc fusce posuere per euismod dis vehicula a, semper fames lacus maecenas dictumst pulvinar neque enim non potenti. Torquent hac sociosqu eleifend potenti."
-publishDate: "2022-11-09T16:39:36.050Z"
-image: "https://images.unsplash.com/photo-1627163439134-7a8c47e08208"
+publishDate: "2024-03-09T16:39:36.050Z"
+image: "../../assets/blog/blog5.jpg"
 category: "design"
 author: "joshua-wood"
 tags: [webdev, tailwindcss, frontend]

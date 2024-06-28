@@ -1,8 +1,8 @@
 ---
-import Footer from "@components/footer.astro";
-import Navbar from "@components/navbar.astro";
-import "@fontsource/inter/variable.css";
-import { checkImageUrl } from "@utils/all";
+import "@fontsource-variable/inter";
+import Footer from "@/components/footer.astro";
+import Navbar from "@/components/navbar.astro";
+import { checkImageUrl } from "@/utils/all";
 import { SEO } from "astro-seo";
 
 export interface Props {
@@ -35,8 +35,8 @@ const makeTitle = title
         "Stablo is a Blog Starter Template built with Astro & MDX."}
       canonical={canonicalURL}
       twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
+        creator: "@/surjithctly",
+        site: "@/web3templates",
         card: "summary_large_image",
       }}
       openGraph={{

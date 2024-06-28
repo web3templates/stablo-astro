@@ -1,8 +1,8 @@
 ---
 title: "The Complete Guide to Full Stack Web Development"
 excerpt: "Ornare cum cursus laoreet sagittis nunc fusce posuere per euismod dis vehicula a, semper fames lacus maecenas dictumst pulvinar neque enim non potenti. Torquent hac sociosqu eleifend potenti."
-publishDate: "2022-12-28T11:39:36.050Z"
-image: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613"
+publishDate: "2024-05-28T11:39:36.050Z"
+image: "../../assets/blog/blog4.jpg"
 category: "design"
 author: "mario-sanchez"
 tags: [webdev, tailwindcss, frontend]

@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 const { author } = Astro.props;
 ---
@@ -7,16 +7,16 @@ const { author } = Astro.props;
 <div
   class="px-8 py-8 mt-3 text-gray-500 rounded-2xl bg-gray-50 dark:bg-gray-900 dark:text-gray-400">
   <div class="flex flex-wrap items-start gap-3 sm:flex-nowrap sm:gap-6">
-    <div class="relative flex-shrink-0 w-24 h-24 mt-1">
+    <div class="relative flex-shrink-0 mt-1">
       {
         author.image && (
           <Image
             src={author.image}
             alt="Author Photo"
-            width={96}
-            height={96}
+            width="96"
+            height="96"
             loading="eager"
-            class="rounded-full"
+            class="rounded-full object-cover w-24 h-24"
           />
         )
       }

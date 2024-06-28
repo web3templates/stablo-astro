@@ -1,9 +1,9 @@
 ---
-import { Icon } from "astro-icon";
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/container.astro";
-import Contactform from "@components/contactform.astro";
-import Pagetitle from "@components/pagetitle.astro";
+import { Icon } from "astro-icon/components";
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Contactform from "@/components/contactform.astro";
+import Pagetitle from "@/components/pagetitle.astro";
 ---
 
 <Layout title="Contact">
@@ -26,16 +26,16 @@ import Pagetitle from "@components/pagetitle.astro";
         <div class="mt-5">
           <div
             class="flex items-center mt-2 space-x-2 text-gray-600 dark:text-gray-300">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
+            <Icon class="text-gray-400 w-4 h-4" name="heroicons:map-pin" />
             <span>1734 Sanfransico, CA 93063</span>
           </div><div
             class="flex items-center mt-2 space-x-2 text-gray-600 dark:text-gray-300">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
+            <Icon class="text-gray-400 w-4 h-4" name="heroicons:envelope" /><a
               href="mailto:hello@stablotemplate.com">hello@stablotemplate.com</a
             >
           </div><div
             class="flex items-center mt-2 space-x-2 text-gray-600 dark:text-gray-300">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
+            <Icon class="text-gray-400 w-4 h-4" name="heroicons:phone" /><a
               href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a
             >
           </div>
